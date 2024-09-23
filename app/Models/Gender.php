@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Gender extends Model
 {
-	protected $table = 'PFX_genders';
+	//protected $table = 'PFX_genders';
 	protected $primaryKey = 'code';
 	public $incrementing = false;
 	public $timestamps = false;
