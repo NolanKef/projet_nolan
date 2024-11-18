@@ -22,9 +22,21 @@ Route::get('/hello', function () {
     return 'Bonjour le monde !';
 });
 
+Route::get('/nolan', function () {
+    return view('schnaps');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/home', function () {
+    return View::make('pages.home');
+});
+    
+    Route::get('/about', function () {
+    return View::make('pages.about');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
