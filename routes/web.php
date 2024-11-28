@@ -29,6 +29,10 @@ Route::get('/nolan', function () {
     return view('schnaps');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
