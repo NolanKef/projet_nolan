@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Role extends Model
 {
-	protected $table = 'PFX_roles';
+	protected $table = 'roles';
 	public $timestamps = false;
 
 	protected $fillable = [
@@ -32,4 +32,11 @@ class Role extends Model
 	{
 		return $this->hasMany(User::class, 'id_role');
 	}
+
+	public function tableRole(): View
+    {
+        $roles = DB::table('roles')->get();
+ 
+        return view('roles.tableRole', ['roles' => $roles]);
+    }
 }

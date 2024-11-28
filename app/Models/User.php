@@ -81,4 +81,11 @@ class User extends Authenticatable
 	{
 		return $this->belongsTo(Role::class, 'id_role');
 	}
+
+	public function tableUsers(): View
+    {
+        $users = DB::table('PFX_users')->get();
+ 
+        return view('PFX_user.tableUsers', ['PFX_users' => $users]);
+    }
 }
